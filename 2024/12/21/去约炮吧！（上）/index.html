@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="爱丽北">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="爱丽北">
+        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="1这个看上去比自己还年轻几岁，脸嫩得能掐出水来的青年回身，面带着好像焊在脸上的完美微笑伸手挂上酒店房间的门链，这样的站位下他被迫紧贴在房门上，八月中炎热的天气让背后金属质感的房门都似乎有些发烫。对方的手蹭过了自己的侧腰处，在隔着一层T恤衫似有似无地触碰中，星野裕心中莫名升起一股烦躁的情绪。他用一种堪称挑衅的手法从青年的衬衫下摆处探入，抚上对方的腹部，勤加锻炼的肉体在放松状态下也是柔软的，之后是肋骨">
+<meta property="og:type" content="article">
+<meta property="og:title" content="去约炮吧！（上）">
+<meta property="og:url" content="http://example.com/2024/12/21/%E5%8E%BB%E7%BA%A6%E7%82%AE%E5%90%A7%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/index.html">
+<meta property="og:site_name" content="乒乓自留地">
+<meta property="og:description" content="1这个看上去比自己还年轻几岁，脸嫩得能掐出水来的青年回身，面带着好像焊在脸上的完美微笑伸手挂上酒店房间的门链，这样的站位下他被迫紧贴在房门上，八月中炎热的天气让背后金属质感的房门都似乎有些发烫。对方的手蹭过了自己的侧腰处，在隔着一层T恤衫似有似无地触碰中，星野裕心中莫名升起一股烦躁的情绪。他用一种堪称挑衅的手法从青年的衬衫下摆处探入，抚上对方的腹部，勤加锻炼的肉体在放松状态下也是柔软的，之后是肋骨">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-12-20T17:15:00.000Z">
+<meta property="article:modified_time" content="2024-12-28T14:49:51.351Z">
+<meta property="article:author" content="爱丽北">
+<meta property="article:tag" content="成人向">
+<meta property="article:tag" content="月星">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/assets/favicon.ico">
+    <title>去约炮吧！（上） · Pingponglogs</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu">
+            <div style="padding-left: 1px;">&#xe775;</div>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">乒乓自留地</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner">
+        <div class="blog-title header-element">
+            <a href="/">乒乓自留地</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">去约炮吧！（上）</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden back-top">
+        <div>&#xe639;</div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                去约炮吧！（上）
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="成人向">成人向</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="月星">月星</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2024/12/21</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <h2><span id="1">1</span></h2><p>这个看上去比自己还年轻几岁，脸嫩得能掐出水来的青年回身，面带着好像焊在脸上的完美微笑伸手挂上酒店房间的门链，这样的站位下他被迫紧贴在房门上，八月中炎热的天气让背后金属质感的房门都似乎有些发烫。对方的手蹭过了自己的侧腰处，在隔着一层T恤衫似有似无地触碰中，星野裕心中莫名升起一股烦躁的情绪。他用一种堪称挑衅的手法从青年的衬衫下摆处探入，抚上对方的腹部，勤加锻炼的肉体在放松状态下也是柔软的，之后是肋骨附近的体侧，手掌移动的同时拇指擦过胸肌，再就是后背和突起的蝴蝶骨。比星野裕高上半个头的人戴着米色镜框，镜片有些厚度，呼吸的节奏没什么变化，好像只是在等他这套动作结束一样表现出像是哄孩子时的耐心。</p>
+<span id="more"></span>
+
+<p>早些钟头，在清吧里看到这张生面孔的时候，星野裕就知道自己是真不喜欢这人，又偏偏长了一副白净清秀的样子。他想着反正今天是礼拜四，不行明天就礼拜五了，还能再换一个，老二先一步做出了选择，星野离开吧台中央的位置走向角落里的圆桌处，在戴眼镜的青年的对面落座，用右手支起脑袋打量起对方。青年手边是一杯玛格丽特，意识到对面的来人才将视线从窗外收回，递出了一个让人狐疑其公式化程度的友善笑容。那酒的味道不是星野裕喜欢的，除了酒精呛鼻的刺激以外他什么都尝不出来。</p>
+<p>星野裕用不在衬衫里的左手扯过青年的右手，将两人之间的距离拉近。他想接吻。那口腔中或许仍然残留着刚才的酒精气味，但味道不是问题，星野只是喜欢和人接吻，个中并没有什么特别的理由。他并没有获得验证猜想的机会。青年用左手按住星野的后脑勺，将他的头别向了自己的脖颈右侧。似乎在这个动作中对方发现星野的头发很柔顺，还用手自然地抚摸了两下。</p>
+<p>“你喜欢喝这个吗？”星野裕指了指那杯蓝色的液体，同时抿了一口手上的黑加仑橙汁。现在他在青年的脖颈下方近锁骨的位置闻到对方肥皂水味的香水，那味道就像这个人一样有些发苦。他忆起自己见色起意的行动，后悔地闭上眼睛。</p>
+<p>“我们去床上吧，”对方在摸够了星野的头发之后提出，“还是你比较喜欢浴室或者其他更危险的地方？”</p>
+<p>星野裕回想起青年的第一句答话：“只是尝尝。”他的表情有些困扰，伸手指了指杯沿的白色颗粒，这实在是太咸了，随后他的视线转向了星野握着海波杯的右手。</p>
+<p>“你有锻炼的习惯吧。”</p>
+<p>说来惭愧，星野裕没有可以称之为腹肌的组织，不过他的确同意肉体不能松懈至平均线附近，毕竟这是出来寻欢作乐的本钱，性爱对他来说是种体力劳动，他可不想在黎明到来之前说出自己体力不支所以我们相亲相爱地一起睡觉吧这种有损形象的发言。因为这样下半身导向的理由，星野裕出入健身房。</p>
+<p>表面上，他只会捧起脸颊回应：“真的假的！你怎么看出来的？”</p>
+<p>“手，”青年抿了一口玛格丽特，“你的手像是常年抓握一些道具和器材，手指和手掌上的茧都不是寻常的厚度。”</p>
+<p>“你是干什么行业的？难道是侦探？”星野正反面地看起自己的手来。</p>
+<p>“是什么呢。”青年回避了问题，重新将视线投向窗外。星野总觉得说这句话时对方的情绪铁定有什么变化，透过指缝却没看出什么端倪。</p>
+<p>“我喜欢你这样的，就像我喜欢黑加仑橙汁。”在近半分钟的沉默后，他用轻佻的语气说道。</p>
+<p>现在星野裕觉得这是他人生中做得最坏的一个决定，这种招摇撞骗的鬼话对谁说不好，非要送给一个除了脸一无是处的男人。说青年一无是处可能是严重的污蔑：不会外显的情绪，有问必答的礼仪，优秀的前戏技巧。这些东西全都被他那张脸拯救了，星野裕不喜欢看到这完美到像在发光的人，只有完美的脸可以发光。</p>
+<p>“单独喝利口酒对我来说还是有些负担，我实在是受不了酒精味，但黑加仑利口酒和橙汁真是绝无仅有的一对！酒精味与橙汁的酸和苦互相抵消，剩下的只有水果的香气和两种不太一样但相得益彰的甜味。只有现调的能达到这种效果，尝尝？”</p>
+<p>续了三杯以后，星野裕明显话多了起来。对面的青年拒绝了星野递来的海波杯，叫服务生追加了一杯一样的黑加仑橙汁。星野裕收回自己的那杯，思考对方是有多爱端着架子。新的黑加仑橙汁送到后，青年喝了一小口，点了点头，将杯子推向星野这边：“能喝吧？”</p>
+<p>“当然。”星野没跟他客气。</p>
+<p>“你还真是很彻底的甜党啊。”</p>
+<p>“炼乳我都是直接吸的。”</p>
+<p>“如果这不是什么黄色笑话，你可能很容易得高血糖。”</p>
+<p>“别说这种保健室老师的台词啦。话说我刚刚讲了黄段子吗？”</p>
+<p>对方在他的反问中沉默。古话说吾日三省吾身，星野裕保持托着腮的姿势，他的脑袋已经开始像漂浮在什么东西上一样松软，像全麦面包片。星野不喜欢将甜食和其他食物混在一起食用，这里的甜食包括果酱和蜂蜜，在正常人的概念里炼乳要涂抹在面包片上算是一条自然规律，但甜食原本的味道是不能被外来品稀释的，这种做法简直倒反天罡，一个经验丰富的甜品美食家如此断定。对面这个青年像便利店机器打出的美式咖啡，苦得叫人想吐，在试图让自己清醒的时候买一杯冰块倒上美式确实是最有效的办法，星野裕不会试图为了缓解美式的苦味而牺牲白糖。星野裕的自省结束了，他要戒糖，当然这宣言仅限今晚：他要喝一杯冰美式。</p>
+<p>“我真的喜欢你，和我上床吧？”他第二次进行了自己也无法判断真假的告白。全麦面包片承担不了太多思考。</p>
+<p>冰美式恰似被摆在便利店的冰柜内任由客人自取的塑料杯：“你想的话。”</p>
+<p>意识到大事不妙的时候青年压在星野裕的身上，正好处在一个眼镜会反射房间顶灯的位置，反光的镜片让星野看不清他的表情。对方在扩张他的后庭，手指已经掌握了前列腺的位置，星野裕一面因为异物入侵的陌生感觉十分不适，一面青年的手指按上前列腺的感觉又实在是太过刺激，结果上来说，他居然被对方只靠按前列腺爽得去了一个全新的世界。在那个世界里星野裕忘记了自己拼死保护后庭的过往，只希望对方能快点把办正事用的家伙塞进来让他上天。</p>
+<p>可青年就这样说着今天就这样吧之后停手了，那眼镜片适时地从反光的位置挪开来，仍然是那张完美无瑕的笑脸，好像只用手让人高潮就达到了他的全部目的。星野裕一边在心中呐喊着这人是不是阳痿啊一边从新世界的云端跌落下来。</p>
+<p>最丢人的是星野裕在爽过之后迅速地熟睡过去，酒精的加持下他眼睛一闭一睁，白天的亮光从窗帘缝挤了进来。他感受到了自己没穿裤子的下半身，想起了莫名其妙就失守的后庭，那青年却是不知道什么时候睡的又早已经醒来，脖子上搭了一块浴巾，正在对着镜子整理刘海。看到星野裕在床上坐起后，他向星野问了个早安。</p>
+<h2><span id="2">2</span></h2><p>“……我到底在干嘛？”</p>
+<p>星野裕抓挠头发，对面是笑得几乎要哭出来的飞机头圆框眼镜男子。他的反应让星野很不满意，将面前已经见底的雪顶蜜瓜苏打吸出“漱漱”的声响。两人在夏天最热的时间点约在了周六，咖啡馆毫不意外地满员了，而且仅限室内。太阳最毒的此刻，室外的好处便是很适合讲些见不得光的事情，星野在阳光的烘烤下颠三倒四地讲完了他失身的始末。</p>
+<p>对面的飞机头如是评价：“还说你不喜欢人家，我怎么没看出来你还有傲娇属性啊，星野！”他还没乐够，开始将大腿拍出极大的噪声。</p>
+<p>“吵死了！你别恶心我。”</p>
+<p>“也没什么不好的吧，睦子前两天还说其实她以前最讨厌的发型就是飞机头。”</p>
+<p>“臭显摆。”</p>
+<p>“那问完早安以后呢？你们就这么和平地退房各回各家了吗？”</p>
+<p>“你还想发生什么啊？人家有班上的，换上衣服就把房卡丢给我走了。”</p>
+<p>“那你接下来打算怎么办？”</p>
+<p>打算？星野裕被这句问话噎住了。他的一生一世都败在昨天晚上了，脑子里只剩下连名字都不知道的眼镜男鼻梁上的镜片，那玩意反光的时候是两个数字零的形状。他不想再出入藏在商店街附近写字楼里打着清吧旗号的性少数群体基地了，他要假装不经意地走在闹市区的无料案内所附近等一个漂亮姐姐介绍生意。成年以后星野裕每天过的都是这种日子，不想动脑子就用老二思考，打零工、购买成箱的明次牛奶巧克力和罐装泡泡糖、健身、给老二找乐子。现充飞机头男是他唯一能约出来说话的朋友，名叫佐久间学，对方像神父一样听星野裕忏悔，一有事就劝：</p>
+<p>“不知道怎么办就去跳河吧，我会把你捞上来的。”</p>
+<p>“现在跳河连我的后门都会进水。”星野裕第十五次回绝这个提议。</p>
+<p>“你头发长太长了吧。”佐久间比了一根食指在和人中差不多高的脸侧。</p>
+<p>一只蜻蜓像是在闷热的空气中再也飞不下去，停在了两人所在的遮阳伞下的这张木桌边缘，它歪了一下长了一对巨大复眼的脑袋。星野裕和蜻蜓对视，思考人类活着怎么有这么多事情要干：饭要吃饱还不能不吃好，保持身材的代价是长期稳定的时间投入，钱更是不能不赚，头发会长长，身体会变脏，排泄需求，性欲，他们说还要找一个自己真正喜欢的事情。可笑，谁能保证自己做好那个小时候不知天高地厚认定为自身命运的爱好？多数人的末路是放弃，那个早就在佐久间和自己的对话中成为禁忌的词汇也是同一件被两人放弃的东西，曲折的球路和命运一样难料，他们就这样轻轻放开了这净重2.7克的人生。这没什么大不了的，活着已经够累了。</p>
+<p>“无所谓，”星野裕回应，“邋里邋遢的也不会有生命危险。”</p>
+<p>说回今早后来发生的事。在意识到自己是以多没防备的状态睡死过去之后星野裕就完全清醒了，坐起身后看到了在室内的小化妆镜前弯腰整理刘海的青年。对方向镜子里的自己问了早安以后，搞不懂到底应该使用哪种表情和语气回应的星野愣在原地，盯着青年将还没干的头发一缕一缕放在原本该有的地方的动作。这个人好像在身上加装了社交辞令的开关：问早安的时候他舒展了一下表情，星野能够察觉到对方的心情还不错；空气恢复沉默后，青年收起笑容，脸上是令星野感到有些陌生的淡漠，出于直觉，星野认为这才是更接近他本性的一面。那笑容是带有服务性的，理应是带有服务性的人在长久的沉默中却也同样没有对“缓和气氛”做出贡献——两人对这种空气持有相似的理解，星野如此推定。他开始有些饿，掏了掏手边的裤子口袋，问对方要不要吃自己摸出的一整板牛奶巧克力。被说了稍等之后，星野先行拆开包装，啃下不规则的一块，边嚼边看青年接下来的动作：将衬衫塞进裤腰，束紧皮带，吹干理好的头发，所以之前为什么要理？星野这么疑惑的同时，对方整理好行头，转身向星野坐着的床侧走来，用单膝点地的姿势蹲下。</p>
+<p>比一瞬间稍长的几秒钟时间，他的脸凑近星野的，星野衔着的是整版巧克力中的最后一块，这被对方从极其暧昧的距离叼走。似乎是一个相当稀松平常的动作，青年随即起身，星野能够看到他将那块巧克力咽下的喉结运动。他给出的评语在获得星野裕分享的食物的人们中极为常见：甜。</p>
+<p>星野裕还在吸那杯蜜瓜苏打，现在杯子里已经没有液体了，他仍然记忆犹新的肥皂水味顺着夏天的空气钻进他的口腔和鼻端，那气味苦得让他的表情揉作一团。食物的苦味让人的大脑感到痛苦，因其带来的痛苦有效阻止犯困，星野是如此认知的，喝了纯茶还能倒头就睡仿佛都市传说。现磨咖啡、无糖茶饮料、纯度99%的黑巧克力和烈酒，这些东西给人的印象总是陈旧、经典、高雅，但星野坚信追求这种印象就是以自虐换取价值，只有便利店深夜班值得和咖啡同时出现——让人不快的回忆中也最好不要夹杂进甜蜜，不然难以抉择自己究竟是喜欢还是讨厌。过去和人上床的经验同样被他这样干脆利落地进行二分，星野裕以绝对的诚实对待食欲和肉欲，这是他身上仅剩的东西。所以那过时三代的把戏为什么被这个男的整得这么清新脱俗？在这苦涩的情绪带来的通感中他疑惑自己至今为止的人生观是不是哪里出现了问题。星野裕不喜欢这个戴眼镜的青年，他会在酒吧点玛格丽特，怕是个平时也能将苦咖啡当成饮料的恐怖分子；谈吐是明摆着的一股优等生气息，他讲那些比命还长的敬语时肯定不会结巴；就是这家伙让星野后门失守，还拒绝和他接吻。</p>
+<p>想到这里，他有些懊恼地右手握拳，点到即止地砸了一下桌子。直到方才为止还相当悠闲地占据角落的蜻蜓迅速飞离了这个地震带。</p>
+<p>得了，星野裕投降。他清楚地记得自己在那一瞬间该死地想和他接吻，那口腔的上一个客人是巧克力，尝起来会是甜的。可他对诉诸行动与否有所顾虑，他头一次想到对方可能并不希望他这么做，毕竟他是个毋庸置疑的失败者，太过遥远对于地球毫无作用，如头皮屑一般多的东西叫星星。在这近40度的高温下抬头，遮阳伞透出最亮光点的位置便是太阳。这东西真是亮死人，只有这唯一的一颗星星被叫做太阳。</p>
+<p>有时他会想起那个被他丢弃的英雄幻想，那个自己便是太阳这颗星星的信念。</p>
+<p>太沉重了，他想到追逐太阳的伊卡洛斯，翅膀折断后便会向地面坠落。他只要安心地当那些头皮屑便好，人们会真情实感为他烦恼，就像太阳。</p>
+<p>去约炮吧！星野裕的目光在这样的想法中同样明亮。</p>
+<h2><span id="3">3</span></h2><p>那已经是快二十年前。前因后果都无关紧要，他最擅长的便是将回忆一再精炼，只留下最重要的部分，反正省略掉的事情一定不会太愉快，月本诚习惯了不去回忆早就忘记的事情。</p>
+<p>“这里很安静、很安全，我只要呆在这里就好了。”</p>
+<p>被那些孩子们推搡着跌坐进储物柜，并用扫帚闩上门把时，他从最一开始就学会了不去求救。呼救只会招致更多麻烦，不如就像他们希望的那样，变成一具没有感情的机器人，还能落得一个轻松的境地。何况月本不讨厌储物柜内黑暗的空间，比起光亮却危险的外部，不如呆在这里什么都不做，付出最低限度的努力便能满足那些低级的施虐狂，他们会自己意淫月本在狭小的黑暗空间吓得上面下面一起哭，怕上课了老师发现不对劲还会自己把人放出来。小学生也只有这种程度了。</p>
+<p>在班里的同学不是害怕就是看热闹的空气中，有这么一个不怎么来上学，所以对这些事完全不了解的孩子会拿着当作门闩的扫把打人。月本诚不习惯诉诸武力，或者说诉诸武力了也没有人能替他说话。那孩子靠着其他人一半还不到的出勤率变得人见人爱，混混小孩看不惯他但也不敢反对，就是他抽走了门闩，将柜子里的月本诚放了出来，带他去附近的神社，请他拉开自己的书包，并在月本感叹你真厉害的时候露出了相当自豪的笑容，问他要不要试试看打乒乓球。</p>
+<p>实际上月本诚对这种事称得上是完全没兴趣。他记得儿时的自己的第一个念头，这也让他单方面对那孩子抱有巨大的歉意。在储物柜被打开，那个和光一起出现的孩子伸出手要将他拉出黑暗时，他想的是，这人要是不那么爱管闲事就更好了。</p>
+<p>这段故事中三流狗血的桥段同样发生在这座香火的延续与否存疑的小小神社中。意外总是突然的，叫星野裕的锅盖头小孩被夸了就会用鼻孔看路，导致他被路上的石砖绊倒，月本诚急忙去扶，自己也没站稳。结果上来看，两个人四仰八叉地在十字路几乎摔成了一只章鱼，月本面部着地，还好戴着的眼镜足够结实，挡了一下也没坏，只是被磨破了嘴唇，眼镜架猛地压了一下鼻梁，生理性的眼泪被逼出了眼框。星野垫在下面也没好到哪儿去，他的两侧手肘恐怕都被磨破了不小一块，但眼睛只是盯着鼻尖和嘴唇因为不同原因发红的月本的脸看。那个情况倒也是没有别的东西还能挤进星野的视线，他绞尽脑汁思考该怎么安慰这个来帮自己还摔哭了的小朋友。</p>
+<p>不能对牙还没换完的小学生想出的办法抱有什么期待。星野裕急中生智想起的是田村老妈说过的话：这点小伤，舔舔就好了！</p>
+<p>在他进行紧急治疗后，月本诚的脸色也涨红了。</p>
+<p>月本诚姑且是一个拥有常识的人，尤其是在与人相处的距离感维持这方面，这同样是他不讨喜的一大原因，也因此他记得这件事。他对这个叫星野裕的小孩多了一条距离感把控得像动物的印象。</p>
+<p>但印象也到此便中断了，那之后星野便因为赛事的安排转学，他没有实现那个教月本打乒乓球的约定。虽然月本诚也不在乎，他已经很感谢那个孩子做出的努力，抱有愧疚和另一部分说不清的东西。发现自己的性取向是男性也是很久之后的事情了，和星野裕一点关系都没有。</p>
+<p>神奇的是，当他坐在那个清吧的角落打发时间时，朝他走来的那个人无疑是近二十年前的那个孩子。这人令人意外地从小到大都没怎么变过，头发倒是留长了不少，月本诚从打的第一个照面开始就想起了一切，虽然那一切也不过是储物柜外照进来过分刺眼的光芒和在石砖上摔的相当痛的一跤。</p>
+<p>星野裕显然不记得自己是哪位了，月本诚的第一反应是庆幸。</p>
+<p>依然是对任何事都以逆来顺受同时尽可能找到生存空间的态度，月本为了工作学会了让自己显得开朗，也赢得了学生们的好评：他目前接了小泉丈的班，在片濑高中教授英语。片濑高中的偏差值不怎么样，关于教师本职的工作量参见现在已经退休，但在岗时一边教英语一边将大量心思花在乒乓球部的小泉丈。在这样堪称安逸的日常中，月本时常会忘记自己其实只有二十代后半，还能称得上是个年轻人。理想和进取对他来说已经是相当陌生的两个词汇，月本老师连教学生的时候都想不起引用它们。他普通地谈过数段恋爱，最近的那个因为月本忘了两个月纪念日赌气不给他发消息，从此发现月本居然连主动保持联络都想不起来而断了联系。这之后过了三周，抱着解决性欲的目的，月本诚找到了这个东京市内的清吧。</p>
+<p>对月本诚至今为止开展过恋爱关系的男性展开总结：希望成为所有人关注的焦点；在某件无关紧要的小事上是专业级；行事风格强硬；话多且爱吃。</p>
+<p>对现在的星野裕，月本诚的疑惑盖过了所有情绪：他为什么不打乒乓球了？星野看上去不像是正常退役的选手，他原以为星野裕铁定会成为日本代表级别的乒乓运动员，在日本不出名那大概率就是出国了，月本诚怎么都没想到再次见到星野裕的时候他没有提及关于乒乓球的任何事情。试探性地询问锻炼习惯时，所有的细节都被巧妙绕开了。这个人和小时候那个总是骄傲且刺眼，令人望而生畏的星野裕不同。月本诚忘记了性欲，在星野索吻的动作前，他看到了大门紧闭的储物柜。</p>
+<p>他对那个放在教室后的储物柜的外观十分熟悉，不过他并没有自己从外部打量柜子的记忆。想通了自己为什么对星野裕这张几乎没怎么变过的脸感到难以描述的陌生 ，月本诚确定自己和星野裕之间隔了一层柜子，不同的是，出于月本也不清楚的理由，这次是星野将自己关了进去。他对回应这个吻有些排斥，不仅是因为这会和小时候那段发生得不明不白的记忆重合。抚摸星野裕的后脑勺时，月本的视线指向光洁的墙面。</p>
+<p>至于之后为什么还是将疑惑按下不表还把人拐到了床上，月本诚姑且想要保留解释权。</p>
+<p>TBC</p>
+
+    </article>
+    <!-- license -->
+        <div class="license-wrapper">
+            <p>Author：<a href="http://example.com">爱丽北</a>
+            <p>Link：<a href="http://example.com/2024/12/21/%E5%8E%BB%E7%BA%A6%E7%82%AE%E5%90%A7%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/">http://example.com/2024/12/21/%E5%8E%BB%E7%BA%A6%E7%82%AE%E5%90%A7%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/</a>
+            <p>Publish date：<a href="http://example.com/2024/12/21/%E5%8E%BB%E7%BA%A6%E7%82%AE%E5%90%A7%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/">December 21st 2024, 1:15:00 am</a>
+            <p>Update date：<a href="http://example.com/2024/12/21/%E5%8E%BB%E7%BA%A6%E7%82%AE%E5%90%A7%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/">December 28th 2024, 10:49:51 pm</a>
+            <p>License：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2024/12/25/%E8%BF%99%E5%95%A5/" title="神奇的是">
+                    <div class="nextTitle">神奇的是</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2024/12/03/%E4%B9%92%E4%B9%93%E4%B9%8B%E4%BD%99/" title="乒乓之余">
+                    <div class="prevTitle">乒乓之余</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+            
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+            
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">3</span></a></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 3
+        </div>
+        <!-- search  -->
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/2024/12/25/%E8%BF%99%E5%95%A5/">神奇的是</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span>
+            <a class="archive-post-title" href="/2024/12/21/%E5%8E%BB%E7%BA%A6%E7%82%AE%E5%90%A7%EF%BC%81%EF%BC%88%E4%B8%8A%EF%BC%89/">去约炮吧！（上）</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/03</span>
+            <a class="archive-post-title" href="/2024/12/03/%E4%B9%92%E4%B9%93%E4%B9%8B%E4%BD%99/">乒乓之余</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="清水">
+                <span class="iconfont-archer">&#xe606;</span>
+                清水
+            </span>
+            <span class="sidebar-tag-name" data-tags="全员">
+                <span class="iconfont-archer">&#xe606;</span>
+                全员
+            </span>
+            <span class="sidebar-tag-name" data-tags="这啥">
+                <span class="iconfont-archer">&#xe606;</span>
+                这啥
+            </span>
+            <span class="sidebar-tag-name" data-tags="无差">
+                <span class="iconfont-archer">&#xe606;</span>
+                无差
+            </span>
+            <span class="sidebar-tag-name" data-tags="成人向">
+                <span class="iconfont-archer">&#xe606;</span>
+                成人向
+            </span>
+            <span class="sidebar-tag-name" data-tags="月星">
+                <span class="iconfont-archer">&#xe606;</span>
+                月星
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="原作核">
+            <span class="iconfont-archer">&#xe60a;</span>
+            原作核
+        </span>
+        <span class="sidebar-category-name" data-categories="IF线">
+            <span class="iconfont-archer">&#xe60a;</span>
+            IF线
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://example.com",
+        root: siteMetaRoot,
+        author: "爱丽北"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>
