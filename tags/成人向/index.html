@@ -486,7 +486,16 @@
                 <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
         </div>
 </footer>
-
+<script>
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault(); // 禁止右键菜单
+    });
+    document.addEventListener('copy', function(event) {
+        event.preventDefault(); // 禁止复制
+        alert('此网站内容受保护，禁止复制！');
+    });
+    </script>
+    
         </div>
         <!-- toc -->
         <!-- sidebar -->
