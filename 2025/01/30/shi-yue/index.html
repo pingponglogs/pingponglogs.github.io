@@ -205,6 +205,8 @@
     <!-- 百度统计  -->
     <!-- 谷歌统计  -->
     <!-- Google tag (gtag.js) -->
+    <meta name="robots" content="noindex, nofollow">
+
 <meta name="generator" content="Hexo 7.3.0"></head>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -531,17 +533,18 @@
         <div class="busuanzi-container">
                 <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
         </div>
+    <script>
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // 禁止右键菜单
+        });
+        document.addEventListener('copy', function(event) {
+            event.preventDefault(); // 禁止复制
+            alert('此网站内容受保护，禁止复制！');
+        });
+        </script>
+        
 </footer>
-<script>
-    document.addEventListener('contextmenu', function(event) {
-        event.preventDefault(); // 禁止右键菜单
-    });
-    document.addEventListener('copy', function(event) {
-        event.preventDefault(); // 禁止复制
-        alert('此网站内容受保护，禁止复制！');
-    });
-    </script>
-    
+
         </div>
         <!-- toc -->
             <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
