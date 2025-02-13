@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="爱丽北">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="爱丽北">
+        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    <meta name="description" content="">
+    <meta name="description" content="Abstract: Peco可能已经和一百个Smile度过了一千种人生，星野裕和月本诚却没有。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="High-Five">
+<meta property="og:url" content="http://pingponglogs.github.io/2025/02/14/highfive/index.html">
+<meta property="og:site_name" content="乒乓自留地">
+<meta property="og:description" content="Abstract: Peco可能已经和一百个Smile度过了一千种人生，星野裕和月本诚却没有。。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-02-13T17:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-13T16:59:10.390Z">
+<meta property="article:author" content="爱丽北">
+<meta property="article:tag" content="清水">
+<meta property="article:tag" content="星月星">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/assets/favicon.ico">
+    <title>High-Five · Pingponglogs</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+    <meta name="robots" content="noindex, nofollow">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu">
+            <div style="padding-left: 1px;">&#xe775;</div>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">乒乓自留地</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner">
+        <div class="blog-title header-element">
+            <a href="/">乒乓自留地</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">High-Five</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden back-top">
+        <div>&#xe639;</div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                High-Five
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="清水">清水</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="星月星">星月星</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">6.3k</span>Reading time: <span class="post-count reading-time">21 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2025/02/14</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p><em>Abstract: Peco可能已经和一百个Smile度过了一千种人生，星野裕和月本诚却没有。。</em></p>
+<span id="more"></span>
+
+<h2><span id="1">1</span></h2><p>星野裕，23岁，KG所属的游戏主播，他正在花费日常生活的一半时间试图论证名叫月本诚的同事其实有精神分裂症。</p>
+<p>KG全称“Kazama Gaming”，是日本名气十分靠前的游戏直播事务所。近一年前，类似星探的事务所工作人员向星野的平台账号“Peco☆”发送了招聘信息，询问他是否有兴趣到公司实地参观一下。招来这种级别的事务所的视线，原因很简单：“Peco☆”刷新了时下热门的游戏《乒乓英雄》的速通世界纪录。</p>
+<p>《乒乓英雄》是玩家操作莫西干头的角色手中的乒乓球拍击球至地面，利用反作用力移动，抵达终点的小成本制作游戏。因其操作手感和地形的双重挑战性，速通和普通流程展现出完全不同的风景。被KG主动联系是星野求之不得的事，据他所知，《乒乓英雄》世界纪录榜上的上上代和上代榜首“Kz_D[龙]”“Smile:&#x2F;”都是KG旗下的玩家，就是看着两人以0.1秒为单位互相赶超的竞速记录让星野对挑战这个游戏的快速通关产生了兴趣。从第一次接触《乒乓英雄》、看了“Smile:&#x2F;”本人解说的视频到完整复刻、优化打法打破记录，星野花了三个月的时间。他对KG的面试官报出这个数字的时候，两名工作人员面面相觑了一阵，后来的交谈几乎可以说是畅通无阻。在那名肌肉量惊人，名牌上写着风间龙一的男性欢迎星野加入Kazama Gaming事务所时，他说自己就是现在《乒乓英雄》的世界第三，通称“Dragon”。真是输给年轻人了，龙一笑着说，Smile今天不在，你们可能只有企划会议能碰面了，你应该会很想见见他本人吧。</p>
+<p>星野裕觉得自己简直就是全世界最成功的私生饭。“Smile:&#x2F;”在游戏区的人气并不算高，由于《乒乓英雄》的走红，他作为游戏玩家的冷静、对待对手从不放水的“反英雄”形象也被更多人熟知，持续霸榜半年的世界纪录也是几乎毫无容错空间，打破纪录的新人Peco完全跳出了传统路线的框架，才结束了Smile的统治地位。而早在《乒乓英雄》还没有发行的年代，星野就关注了早期作为恐怖解密游戏实况主的Smile，那时他几乎不说话，和观众的交流仅限于游戏玩法，几乎不会花时间点评剧情，被调侃为像机器一样的人。</p>
+<p>星野裕最喜欢看Smile版的《大大噩梦》，这其实有一半是因为他不敢一个人玩，毕竟星野看完《过劳死的杰克》都能吓得晚上睡不着觉。想象Smile在屏幕以外板着脸毫无波澜地单击鼠标、操作键盘推动剧情总能让观众安心不少，这就是他的魅力所在了，星野这么想。这之后就是《乒乓英雄》时代，持续两年的龙笑英雄之争以Dragon的无端隐退告一段落，这两人的名字在世界第一的位置上如翻页时钟一样跳动的同时，Dragon单方面说过很多次自己和Smile的私交很不错，也经常主动邀请Smile双排热门网游。“卖腐”嘛！星野裕回想自己鬼使神差专门去看过的二次创作，同人作者笔下的Dragon和风间龙一的实物比起来肌肉量还是差了不少。在这个不是露脸直播就是开发虚拟人设的今天，KG并不限制成员的直播方式，这似乎是所长风间龙一的方针之一。</p>
+<br>
+
+<h2><span id="2">2</span></h2><p>综上所述，星野裕主动要求负责两周后，也就是三月初企划会议的入场签到。他想了整整99种和Smile打招呼的方式，就等着当天那个冷脸闷葫芦毫不知情地在签到表上写下自己的大名。风间龙一交给星野裕两张左右版式，排满了人的表格。KG只是风间文化有限公司伞下的一间事务所，公司的老总是风间龙一的爷爷风间龙——这老人鬼才级别的商业头脑嗅到了新媒体行业的商机，设立了各行各业的分部：星野裕见到了运动教练真田昌幸，他在风间的工作算是兼职，正职在健身房；萌宠区的猫田，他为新手养猫人做基础科普，同时测评猫粮和猫玩具；穿搭博主Akuma，老实说这人的风格太摇滚了，星野不太喜欢；对外汉语教室辻堂的中国人老师孔文革；汽车测评博主Yuri，她摘下墨镜在纸上签下风间百合枝这个名字，还留下了两杯咖啡交给星野和另一位负责签到的工作人员：“辛苦啦。”前前后后走了大几十号人，星野裕翻了翻签到表，剩到最后的居然是“Smile:&#x2F;”：“这种类型的人会迟到啊……哎，你认识他吗？”星野转向来时就一直坐在他旁边位置上的工作人员，这个看上去年纪比他没大多少的男性留中分，戴一副眼镜，说话时语气带着笑意，即便没什么事的时候嘴角也微微上扬。视线对上这张脸的时候，两个字出现在星野裕的眼前：帅哥。</p>
+<p>“你小心点，这个人性格很烂的。”这个五官标致的青年居然不是出镜主播，星野裕忙着把帅哥这两个字从视线中赶走，他好像说了什么有点不太合适的话，但此时的星野裕没有仔细想个中的含义。从会场内走出的是风间龙一，他向坐在前台的两人打了声招呼：“哦，Smile、Peco。人齐了，进去吧。”</p>
+<p>“Smile还没……”星野话说了一半，他看到旁边的眼镜男趁这个档口把名字签在纸上：月本诚。“啊！你这帅……家伙就是Smile冒号斜杠？”星野裕想起了Smile的头像，就是一个眼镜的中分短发简笔画脑袋，他还是不小心把眼前的字说出口来了。</p>
+<p>“作为游戏主播而言形象有点太好了吧？”风间龙一说，“Smile平时性格很随和的，你怎么说话他都不会生气。”</p>
+<p>“这可不好说。开会去吧，英雄。”和Smile的印象怎么都对不上的月本诚招呼道，星野想起就在昨晚，Smile第三次把Peco的世界记录刷下去。虽说《乒乓英雄》的玩家层共识是挑战不可能的每一个人都是“英雄”，星野裕还是从笑着的月本口中听出一层挑衅的意味，这可能比刚才更像Smile了约1%。</p>
+<p>而月本诚和Smile还是太不一样了。星野裕还是很难把企划会议中话语权几乎是整个所仅次于风间龙一的人和游戏机器联系在一起。“……我和Peco最近粉丝群体有重叠的趋向，”月本的声音传来，星野分辨到自己的昵称，将精力拉回现场，“随时准备双人联动直播应该都会有不少人气。”</p>
+<p>“咦，Smile来邀请我吗？”星野裕想到那个总是自己玩自己的Smile，和Dragon合作时也是Dragon看起来上心个二十倍左右吧，他不假思索地将最大的问题抛了出来。</p>
+<p>“怎么可能，你准备好来叫我吧。Smile会答应的。”似乎是为了让星野宽心，月本补上了第二句。星野裕点点头表示明白之后，他们的话题很快推进到了下一个项目。好难搞的家伙，帅哥都这样吧？星野裕腹诽道，这又很不像Smile了。</p>
+<p>两人的初次合作是在愚人节双排《绝地求死》，Smile玩射击类游戏强得可怕，半个字不说用狙击枪把场全清完了；两周后一起玩了新出的双人动作游戏《分道扬镳》，Peco趁机借游戏主角的离婚矛盾把联动的时候什么话题都得自己递的Smile吐槽了个爽，“我还得拖地我还得做饭我还得洗碗洗完了还得帮你冷水洗……眼镜！”切片发布当天播放就过了六位数；又因为没抽出对得上的时间，再次合作就是七月份的《星月谷物语》，八月份的企划会议上，种地收菜挖矿钓鱼被安排成了固定节目，两人就这样隔两个礼拜或一个月在农场碰一次头，偶尔也开始有机会聊些无关痛痒的，比如说月本诚其实和星野裕同龄，他是18岁开始的网上直播，星野裕则是大学快毕业时想到工作，下意识地逃避现实；期间，俩人还在《乒乓英雄》榜上互相顶对方的ID数十次。星野裕入职KG的第一年就这样结束了。</p>
+<p>总结下来，这一年也是“卖腐”嘛！不过星野裕没有自觉，他认为自己和Smile的关系越发扑朔迷离，月本诚让他根本捉摸不透。粉丝这边，笑扁和扁笑的人数大概是1比1，值得来个人采访一下星野裕是抱着什么样的想法看待这些二创，回答就是：“你们什么都不懂。你们根本不懂Smile到底是个什么人，他有精神病，他精神分裂。”星野裕就这样看着扁笑的“镇圈神图”右手握拳敲了一下桌子，手机自己吻上了他的左手食指。他用大号给这张图点了个赞。</p>
+<br>
+
+<h2><span id="3">3</span></h2><p>第二年1月的企划会议散会时正值饭点，星野裕走到电车站附近的竹坂屋吃回转寿司，吃完在站台碰到了无所事事等车的月本诚。好巧不巧他们是一个方向，星野不是会对认识的人装没看见的性格，他走向同事身后：“哟，月本。”</p>
+<p>“下午好，星野，”月本诚露出那随和的笑容，“你平时也乘这趟车吗？之前没见过你。”</p>
+<p>“对，我还得换江之岛电铁到镰仓。通勤是个麻烦事啊。”星野叹气。</p>
+<p>“那换乘也完全一样呢。我在藤泽，其实Dragon本家也在镰仓附近，”月本回应，“单程就要近两小时呢。”</p>
+<p>星野裕得了种看到月本诚有来有回地接下话题就在心里咋舌的病，原本这毛病只会在看到月本和其他人说话时发作，但合作近一年后他发起病来连现实状态的自己都有点嫉妒。直播时你只会对Peco说“嗯”啊Smile，什么话题都得我找。</p>
+<p>“你给粉丝点赞的事也传到我这边来了。”月本见星野不说话，顺口提起了他今早在粉丝群看到的截图，他讲得还是相当迂回。</p>
+<p>“唉，你知道我为啥要给同人图点赞吗？”星野显得满不在乎，他竖起一根手指，“这包含着我对你这家伙要是能像Smile一样乖巧就好了的期待。”</p>
+<p>“那撤回点赞就是其实也没那么希望的意思？”月本说。</p>
+<p>“你啊……”星野抓乱那个和Peco头像一样的锅盖头，“你先老实说你通勤路上看到我当没看见的次数有几次吧。”</p>
+<p>“我没看到过你啊？”月本真诚地表达疑惑。</p>
+<p>星野叹了口气，在星月谷拿着鱼竿的Smile毫无表示地路过种地的Peco时也是这样说的，他转而提起工作：“二月的企划你打算怎么办？”</p>
+<p>“情人节活动的预热吗？作为粉丝福利向的活动还是尽早吧。游戏倒是玩什么他们都会高兴的，不过这次就别玩星月谷了。你觉得呢？”月本说出了目前为止的想法。</p>
+<p>“玩双人恐怖游戏吧？”星野提议，“反正我一个人不敢玩啦。”</p>
+<p>“我在想为了观看体验要不在同一个场所直播，”月本说，“公司不太方便，为了赶终电还得控制时间。正好家离得近的话不然去谁家里播？”</p>
+<p>“……是我强迫Smile来我家的，用了点特殊手段。什么手段？保密。”Peco在预热直播时这么解释道。弹幕如星野所料地开始刷屏起哄，你们根本什么都不懂，星野裕想，谁能懂月本诚到底是不是下意识对身边所有人搞服从性测试，用着一张如沐春风的帅脸。“Peco说要是没人一起玩就会吓得心跳骤停死在家里。”“总之2月13日情人节前夜，八点准时开始，游戏是《飞刀惊魂》！以上！”</p>
+<p>“不过确实有必要解释一下，毕竟你现在算我的搭档，”月本将空出的一个位置让给星野坐下，在他面前摇摇晃晃地开口了，“我刚开始直播的时候性格确实就是Smile那样冷淡，这几年也算是成长了吧。”</p>
+<p>“只是突然从那种阴沉的性格转变成现在这样会让以前的粉丝困扰，而且作为设定好像还挺讨喜的。”</p>
+<p>“我的嘴可是为了你的设定天南地北奔波啊。”星野裕翻了个白眼。直觉告诉他月本诚在这里保留了一部分实话，或许专注游戏不管闲事的Smile才是月本最自然的那一面，转变的根本原因到底是什么？可以肯定的是，月本诚不抗拒被人喜欢，甚至喜欢被人喜欢。</p>
+<p>“效果挺好的嘛，粉丝也很喜欢。”月本诚摊开一只手。</p>
+<p>“我也没说我反对这样，”星野说，他没有抬头，语气是轻描淡写的，“我以前也是你的粉丝啊，Smile和月本我都喜欢。”</p>
+<p>月本的回应是“谢谢”。</p>
+<br>
+
+<h2><span id="4">4</span></h2><p>星野对情人节当晚的期待可能根据不同方面分成了1比9两个大块，9是恐怖游戏《飞刀惊魂》的剧情和演出本身，他听说这实在是一部毫无痛点的良作，能找到Smile这种水平的搭档，星野裕不得不承认，是堪称荣幸的事情。1是如果Smile能稍微照顾一下一打恐怖游戏就抛弃大脑的自己就好了，他们可能有个百分之十的机会把气氛整得浪漫点吗？</p>
+<p>好吧，长相人不人鬼不鬼流着口水的NPC将飞刀直直砸向Peco，因为角色左眼被刺瞎的判定，星野的屏幕跟着熄灭了一半，此时Peco在Smile的视角看上去就是捂住左眼发出尖叫后，很没风度地玩命逃跑，他知道气氛终于还是完全走进搞笑路线了。Smile叹了口气，月本诚就坐在他的右手边，星野裕的目光往旁边瞟了一眼，这人居然是在笑的，而声音听上去还是很不高兴的样子：“眼睛瞎了只能读档了。”</p>
+<p>“我还得再过一遍这之前的剧情？”星野也顾不了这么多了，他声音颤抖。</p>
+<p>“嗯。”Smile说着，顺手像砍瓜切菜一样解决了刚刚那两个远程攻击的小怪。</p>
+<p>“不要啊！？”Peco哀嚎起来，那天晚上大半的时间他都是这样吵闹的，以至于接近结局的时候他嗓子都有点哑了。进入结局动画前的加载阶段，Peco用分岔的嗓音说：“宇宙级惊天大秘密。我发现Smile这个人是会笑的。”</p>
+<p>“我生不如死的时候这家伙叹气的时候都是笑着叹的！我的魂都要离开身体飞到海边坐船去巴布亚新〇内亚了他还有空嘲笑我，你们说说这还是人吗？”</p>
+<p>粉丝们的意见是：“他都为他真的笑了，这俩人哪天官宣了我不会意外的。”</p>
+<p>触发关键词：“真正的笑容”。原本以为看到月本诚直播时的状态就能搞懂一切的星野裕，在经历了今晚的数小时后变得更加糊涂了。Smile不笑，他总是很冷静，甚至可以说很冷血；月本诚在大多数时候都能散发出近乎真实的温柔气质，他的笑容并非是因为高兴，也不全是礼节性的那种，只是起到了让大家将月本诚和他的笑脸这组印象结合在一起的作用。在星野裕身边不出半米的位置，笑着的是月本诚还是Smile？或是两者皆无，有没有可能是两者均有？</p>
+<p>星野裕沉默着看完直升机带着主角们飞向象征希望的蓝天白云之间，Smile给出的解释是：“他太菜了，我气笑的。”当然信不信就是观众的自由了。动画播放完毕后，Peco维持着劫后余生般颤抖的声音继续道：“太可怕了，我不要做例行总结了，Smile你看着办。”Smile接过话：“看了一整晚刚把我记录刷掉的英雄吃瘪，有点吵。”很快，他又附加了四个字：“挺开心的。”“这就是情人节吗？”Peco向空气提出疑问，而Smile开始念起了结束语。“这就是今天的直播了，切片组辛苦，祝大家情人节快乐。”</p>
+<br>
+
+<h2><span id="5">5</span></h2><p>在此，有必要仔细聊一下月本诚与《乒乓英雄》。“不可能”是众多以难度闻名的游戏最好用的噱头。同大部分玩家一样，月本诚最一开始只是想挑战《乒乓英雄》那个“通关”的不可能而已。肉眼可见的粗糙美术搭配上很不牢靠的移动手段，封面上留着莫西干发型的角色呲着一口白牙，标语是“攀登吧！英雄”。《乒乓英雄》对月本诚来说不是什么很有挑战性的游戏。</p>
+<p>让月本注意到速通玩法的是封面写着“日本玩家打破世界纪录”的视频，来自一个名叫“Kz_D[龙]”的账号将通关时间打进了一分钟以内，达成了里程碑式的突破，被粉丝们称为“英雄”。对于一个普通玩家而言，一瞬间生出“我也能完成这样的操作”是寻常的傲慢，而Smile是个想法总能够与现实对齐的天才。打破Dragon的纪录时，人们称Smile为“反英雄”。Dragon与Smile的故事是以反派的胜利作结的，有人喜欢他的技术和冷酷无情的性格，也有人诟病他不懂得照顾人的情绪，不会回应任何因他而起的争吵。风间龙一，在与月本诚相处时显得过分小心，意识到自己的顾虑同样也是让月本为难的因素后，他选择将重心转移到事务所的运营工作。月本诚坦然地接受这个变化，希望尽可能在工作场合起到些作用。“我喜欢Smile在经历那些事之后，仍然坚持自我的姿态”，某位粉丝如此评价道。“自我”却是个太不明确的概念了。</p>
+<p>“Peco☆”以无所顾忌的姿态打破《乒乓英雄》的世界纪录时，月本诚最早收到的消息来自速通网站上发来的邮件，他也没想到这个ID背后的竟然还是个日本人，甚至之后变成了同事。表示自己也是Smile多年粉丝的Peco单方面对Smile和《乒乓英雄》发表的评价被剪辑出来：我当然是英雄！Smile也是英雄。试图冲击《乒乓英雄》的世界纪录的所有人都是英雄。</p>
+<p>与Peco的对局让月本诚久违地感到痛快。对手是十分多变的，他不按常理出牌，总是花费很多时间在研究大概率不存在的新路线上，那些看似奇妙的成果必定是以巨量的努力为基石，Smile打出的记录则杀死了容错率，逼迫Peco进一步思考。他有时又会猜想，也许Peco是行动大于思考的那一派，数据的偏差缩短到0.1秒以内时，比拼的正是天赋和练习叠加形成的本能。他们能像《乒乓英雄》结尾一般，展开翅膀飞入群星之间吗？月本诚不会给出答案，他总是在等待结果的那一方，并且他已经准备好接受各种可能。</p>
+<br>
+
+<h2><span id="6">6</span></h2><p>退出直播界面后，月本摘下耳机，转向星野的方向笑着问了一句“辛苦了”。时间接近凌晨一点，江之岛电铁的运营时间结束得比东京的更早，月本如计划中的一样回不了家了。星野跟着摘下耳麦，伸展了一下紧绷的肌肉：“你留下吧，反正我还有一床被子。”</p>
+<p>“谢谢，那就打扰了。”月本回答。</p>
+<p>“等一下，”星野伸出右手，五指并拢，“别说谢谢，我还是听不惯这个。”</p>
+<p>“为什么？”月本疑惑。</p>
+<p>“你知道我说喜欢你是认真的，上次在电车上你就听懂了，”在屏幕以外，叹气的总是星野裕，他已经太了解月本诚习惯性装傻的特点，这次星野的视线透过月本的镜片试图与对方交互，“所以我可能应该说，你大概不知道我有多想握住你的手。而且我不想征得你的同意。”</p>
+<p>星野裕一直是比起行动更擅长嘴上功夫的，他说完以后，月本诚的眼神飘向右上方，好像在认真构想一些画面，星野同样停在原地等他的视线回归。很快，月本重新望向星野裕，他伸出左手：“握手的话当然可以。”</p>
+<p>星野这时才露出他精心准备的，和刷新Smile的世界纪录时一样的得意笑容，一边将月本诚的手调整到合适的角度。摆弄成一个不错的造型以后，他抬起右手与那只手掌相击：“High Five！庆祝工作顺利结束！”</p>
+<p>这就是星野裕和月本诚、Peco和Smile度过的第一个情人节。星野裕会想起自己看过一个同人漫画，在黑白色的世界中Peco和Smile真的成了乒乓球选手，为了夺取唯一一个“英雄”的席位通过比赛决一胜负；有时他们在故事里也真的成了世界级的明星，Peco会和一百个女星传出绯闻，而Smile根本不会介意；两人偶尔也用荷枪实弹进行真正的战争；Peco在Smile眼中发过光；当然，更多时候他们就像星野裕所希望的那样谈一场普通的恋爱，新年去神社初参拜、情人节上街约会，春天一起喝茶、夏天到了就看花火大会、秋天收拾行李去旅游、冬天躺进被炉，开些只有两个人懂的玩笑。</p>
+<p>神奇的是，从来没有人怀疑过Peco和Smile是否能相互理解，也许是两人同样花在《乒乓英雄》这款缺心眼游戏的时间太多，导致打游戏都像在神交。可无论如何现在只是他们度过的第一年和第一个情人节，在暗处偷看了所有同人作品的Peco可能已经和一百个Smile度过了一千种人生，星野裕和月本诚却没有。</p>
+<p>击掌过后，星野裕的右手不安分地探进月本诚左手的指缝之间，两人短暂地十指相扣，五秒钟后因为星野自己都搞不懂他们在干什么而分开。短短五秒间，星野裕同时想了两件事：他们也不一定非得急着谈一场恋爱。他还是想和月本诚干点不穿衣服才能干的事情。</p>
+<p>可以剧透的是，星野裕肯定会得逞。</p>
+<br>
+    </article>
+    <!-- license -->
+        <div class="license-wrapper">
+            <p>Author：<a href="http://pingponglogs.github.io">爱丽北</a>
+            <p>Link：<a href="http://pingponglogs.github.io/2025/02/14/highfive/">http://pingponglogs.github.io/2025/02/14/highfive/</a>
+            <p>Publish date：<a href="http://pingponglogs.github.io/2025/02/14/highfive/">February 14th 2025, 1:00:00 am</a>
+            <p>Update date：<a href="http://pingponglogs.github.io/2025/02/14/highfive/">February 14th 2025, 12:59:10 am</a>
+            <p>License：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2025/01/30/shi-yue/" title="无题试阅">
+                    <div class="prevTitle">无题试阅</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+            
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+            
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+        </div>
+    <script>
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // 禁止右键菜单
+        });
+        document.addEventListener('copy', function(event) {
+            event.preventDefault(); // 禁止复制
+            alert('此网站内容受保护，禁止复制！');
+        });
+        </script>
+        
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">6</span></a></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 10
+        </div>
+        <!-- search  -->
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span>
+            <a class="archive-post-title" href="/2025/02/14/highfive/">High-Five</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span>
+            <a class="archive-post-title" href="/2025/01/30/shi-yue/">无题试阅</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/29</span>
+            <a class="archive-post-title" href="/2025/01/29/hoshinoyutakajikenn3/">星之泛滥事件（3）因果律</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2025/01/18/hoshinoyutakajikenn2/">星之泛滥事件（2）镜头</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2025/01/07/hoshinoyutakajikenn1/">星之泛滥事件（1）第一次接触</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2025/01/01/xing-yu-yue/">星与月</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span>
+            <a class="archive-post-title" href="/2024/12/31/qu-yue-pao-ba-xia/">去约炮吧！（下）</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/2024/12/25/zhe-sha/">神奇的是</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span>
+            <a class="archive-post-title" href="/2024/12/21/qu-yue-pao-ba-shang/">去约炮吧！（上）</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/03</span>
+            <a class="archive-post-title" href="/2024/12/03/ping-pang-zhi-yu/">乒乓之余</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="清水">
+                <span class="iconfont-archer">&#xe606;</span>
+                清水
+            </span>
+            <span class="sidebar-tag-name" data-tags="全员">
+                <span class="iconfont-archer">&#xe606;</span>
+                全员
+            </span>
+            <span class="sidebar-tag-name" data-tags="这啥">
+                <span class="iconfont-archer">&#xe606;</span>
+                这啥
+            </span>
+            <span class="sidebar-tag-name" data-tags="成人向">
+                <span class="iconfont-archer">&#xe606;</span>
+                成人向
+            </span>
+            <span class="sidebar-tag-name" data-tags="月星">
+                <span class="iconfont-archer">&#xe606;</span>
+                月星
+            </span>
+            <span class="sidebar-tag-name" data-tags="星月">
+                <span class="iconfont-archer">&#xe606;</span>
+                星月
+            </span>
+            <span class="sidebar-tag-name" data-tags="风间月">
+                <span class="iconfont-archer">&#xe606;</span>
+                风间月
+            </span>
+            <span class="sidebar-tag-name" data-tags="星月星">
+                <span class="iconfont-archer">&#xe606;</span>
+                星月星
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="原作核">
+            <span class="iconfont-archer">&#xe60a;</span>
+            原作核
+        </span>
+        <span class="sidebar-category-name" data-categories="IF线">
+            <span class="iconfont-archer">&#xe60a;</span>
+            IF线
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://pingponglogs.github.io",
+        root: siteMetaRoot,
+        author: "爱丽北"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>
